@@ -78,8 +78,22 @@
   max-width: 30ch;
 }
 
+.listItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.listItem:is(:hover, :focus, :active) {
+  background-color: #424242;
+  border-radius: 5px;
+  width: 220px;
+  height: 40px;
+}
+
 .sidebar {
   display: flex;
+  flex-direction: column;
   padding: 30px;
   min-width: 250px;
   max-width: 400px;
@@ -89,6 +103,18 @@
 
 .sidebar svg {
   margin-right: 10px;
+}
+
+.listItem svg {
+  margin-right: 7px;
+}
+
+.sidebar div {
+  display: flex;
+}
+
+.sidebarTitle {
+  margin-bottom: 45px;
 }
 
 .header {
@@ -110,6 +136,11 @@
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.listItemContainer {
+  flex-direction: column;
+  /* justify-content: center; */
 }
 
 /* Enable hover only on non-touch devices */
