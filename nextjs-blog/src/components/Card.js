@@ -1,14 +1,16 @@
 import React from "react";
 import styles from "@/styles/Home.module.css";
-import Chip from "@/components/Chip"
+import Chip from "@/components/Chip";
 
 function Card() {
   return (
     <div className={styles.card}>
-      George Bryant
-      <Chip />
       <div>
-        <div className={styles.detail}>georgebryant@gmail.com</div>
+        George Bryant
+        <Chip />
+      </div>
+      <div className={styles.detail}>
+        <div>georgebryant@gmail.com</div>
         <svg
           width="4"
           height="5"
@@ -18,7 +20,7 @@ function Card() {
         >
           <circle cx="2" cy="2.5" r="2" fill="#ABABAB" />
         </svg>
-        <div className={styles.detail}>(393) 292-0983</div>
+        <div>(393) 292-0983</div>
       </div>
     </div>
   );

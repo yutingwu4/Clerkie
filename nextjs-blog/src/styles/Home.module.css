@@ -179,12 +179,12 @@
 
 .card {
   display: flex;
+  flex-direction: column;
   color: #000000;
   padding: 25px;
   /* max-width: calc(100% - 250px); */
   /* max-width: 250px; */
   flex-grow: 1;
-  height: 114px;
   border: 1px solid #d7d7d7;
   border-radius: 5px;
 }
@@ -193,7 +193,7 @@
   color: #ababab;
   font-size: 14px;
   font-weight: 500;
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
 .card div {
@@ -203,7 +203,6 @@
 }
 
 .card svg {
-  margin-top: 20px;
   margin-right: 10px;
 }
 
