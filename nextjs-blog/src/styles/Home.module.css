@@ -178,6 +178,7 @@
 }
 
 .card {
+  display: flex;
   color: #000000;
   padding: 25px;
   /* max-width: calc(100% - 250px); */
@@ -205,6 +206,29 @@
   margin-top: 20px;
   margin-right: 10px;
 }
+
+.chipBlue {
+  margin-left: 10px;
+  justify-content: center;
+  background-color: #DFEFFF;
+  color: #3399FF;
+  width: 94px;
+  height: 21px;
+  border-radius: 30px;
+  font-size: 12px;
+}
+
+.chipGreen {
+  margin-left: 10px;
+  justify-content: center;
+  background-color: #DCFFE6;
+  color: #19B444;
+  width: 135px;
+  height: 21px;
+  border-radius: 30px;
+  font-size: 12px;
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {

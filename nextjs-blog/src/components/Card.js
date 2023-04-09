@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "@/styles/Home.module.css";
+import Chip from "@/components/Chip"
 
 function Card() {
   return (
     <div className={styles.card}>
       George Bryant
+      <Chip />
       <div>
         <div className={styles.detail}>georgebryant@gmail.com</div>
         <svg
