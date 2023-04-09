@@ -143,6 +143,35 @@
   /* justify-content: center; */
 }
 
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 37px;
+  width: 59px;
+  border: 1px solid #ABABAB;
+  border-radius: 30px;
+  padding: 10px 20px;
+  text-align: center;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.filterContainer {
+  display: flex;
+  align-items: center;
+}
+
+.filterContainer a {
+  color: #D7D7D7;
+}
+
+.vl {
+  border-left: 1px solid #D7D7D7;
+  height: 28px;
+  margin: 0 10px;
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
