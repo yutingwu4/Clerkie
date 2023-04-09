@@ -138,9 +138,14 @@
   right: 0;
 }
 
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  padding: 100px 200px;
+}
+
 .listItemContainer {
   flex-direction: column;
-  /* justify-content: center; */
 }
 
 .filter {
@@ -149,7 +154,7 @@
   align-items: center;
   height: 37px;
   width: 59px;
-  border: 1px solid #ABABAB;
+  border: 1px solid #ababab;
   border-radius: 30px;
   padding: 10px 20px;
   text-align: center;
@@ -163,15 +168,43 @@
 }
 
 .filterContainer a {
-  color: #D7D7D7;
+  color: #d7d7d7;
 }
 
 .vl {
-  border-left: 1px solid #D7D7D7;
+  border-left: 1px solid #d7d7d7;
   height: 28px;
   margin: 0 10px;
 }
 
+.card {
+  color: #000000;
+  padding: 25px;
+  /* max-width: calc(100% - 250px); */
+  /* max-width: 250px; */
+  flex-grow: 1;
+  height: 114px;
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+}
+
+.detail {
+  color: #ababab;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.card div {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.card svg {
+  margin-top: 20px;
+  margin-right: 10px;
+}
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
