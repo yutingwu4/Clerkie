@@ -1,11 +1,12 @@
 import React from 'react'
 import styles from "@/styles/Home.module.css";
+import Link from "next/link";
 // import HomeIcon from "@/assets/homeIcon.svg"
 
 function ListItem() {
   return (
     <div className={styles.listItemContainer}>
-      <div className={styles.listItem}>
+      <Link href="/" className={styles.listItem}>
         {/* <img src={HomeIcon} alt='home icon' /> */}
         <svg
           width="24"
@@ -38,8 +39,8 @@ function ListItem() {
         </svg>
 
         <div>Home</div>
-      </div>
-      <div className={styles.listItem}>
+      </Link>
+      <Link href='/friends' className={styles.listItem}>
         <svg
           width="24"
           height="24"
@@ -69,7 +70,7 @@ function ListItem() {
         </svg>
 
         <div>Friends</div>
-      </div>
+      </Link>
     </div>
   );
 }

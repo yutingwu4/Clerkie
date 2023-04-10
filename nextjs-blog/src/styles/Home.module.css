@@ -84,6 +84,7 @@
   padding: 8px 10px;
   border-radius: 6px;
   width: 100%;
+  color: #fff;
 }
 
 .listItem:is(:hover, :focus, :active) {
@@ -145,7 +146,9 @@
 .cardContainer {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   padding: 100px 200px;
+  gap: 15px;
 }
 
 .listItemContainer {
