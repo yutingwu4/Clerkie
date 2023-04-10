@@ -14,8 +14,8 @@ function FilterButton() {
         <path
           d="M2 3.5H18"
           stroke="#424242"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
           stroke-linejoin="round"
         />
         <circle
@@ -24,13 +24,13 @@ function FilterButton() {
           r="2.25"
           fill="white"
           stroke="#424242"
-          stroke-width="1.5"
+          strokeWidth="1.5"
         />
         <path
           d="M17 10.5H1"
           stroke="#424242"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
           stroke-linejoin="round"
         />
         <circle
@@ -40,13 +40,13 @@ function FilterButton() {
           transform="matrix(-1 0 0 1 19 7.5)"
           fill="white"
           stroke="#424242"
-          stroke-width="1.5"
+          strokeWidth="1.5"
         />
         <path
           d="M2 17.5H18"
           stroke="#424242"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
           stroke-linejoin="round"
         />
         <circle
@@ -55,7 +55,7 @@ function FilterButton() {
           r="2.25"
           fill="white"
           stroke="#424242"
-          stroke-width="1.5"
+          strokeWidth="1.5"
         />
       </svg>
     </div>

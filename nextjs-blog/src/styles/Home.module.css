@@ -209,8 +209,8 @@
 .chipBlue {
   margin-left: 10px;
   justify-content: center;
-  background-color: #DFEFFF;
-  color: #3399FF;
+  background-color: #dfefff;
+  color: #3399ff;
   width: 94px;
   height: 21px;
   border-radius: 30px;
@@ -220,13 +220,91 @@
 .chipGreen {
   margin-left: 10px;
   justify-content: center;
-  background-color: #DCFFE6;
-  color: #19B444;
+  background-color: #dcffe6;
+  color: #19b444;
   width: 135px;
   height: 21px;
   border-radius: 30px;
   font-size: 12px;
 }
+
+.filterControl {
+  width: 320px;
+  height: 286px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  border-radius: 6px;
+  padding: 1px;
+}
+
+.filterControl hr {
+  border-top: 1px solid #eaeaea;
+}
+
+.filterControlHeader {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  color: #424242;
+  padding: 24px;
+}
+
+.clearButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  color: #d7d7d7;
+  font-family: Inter;
+  font-weight: 600;
+  margin-right: 60px;
+}
+
+.closeButton {
+  display: flex;
+  justify-content: flex-end;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 99px;
+}
+
+.filterDetails {
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px;
+  color: #424242;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.friendStatus {
+  margin: 26px 0 26px 0;
+  font-size: 14px;
+  color: #686868;
+  font-weight: 500;
+}
+
+.filterDetails > div {
+  margin-bottom: 26px;
+}
+
+.applyButton {
+  justify-content: center;
+  border: none;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffff;
+  background-color: #424242;
+  border-radius: 6px;
+  width: 300px;
+  height:45px;
+  margin-left: 9px;
+  cursor: pointer;
+}
+/* .filterDetails > label {
+  margin-bottom: 26px;
+} */
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
