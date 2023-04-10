@@ -1,10 +1,12 @@
 import React from 'react'
 import styles from "@/styles/Home.module.css";
+// import HomeIcon from "@/assets/homeIcon.svg"
 
 function ListItem() {
   return (
     <div className={styles.listItemContainer}>
       <div className={styles.listItem}>
+        {/* <img src={HomeIcon} alt='home icon' /> */}
         <svg
           width="24"
           height="24"

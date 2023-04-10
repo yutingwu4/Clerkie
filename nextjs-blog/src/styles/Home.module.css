@@ -81,27 +81,31 @@
 .listItem {
   display: flex;
   align-items: center;
-  margin-bottom: 16px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  width: 100%;
 }
 
 .listItem:is(:hover, :focus, :active) {
   background-color: #424242;
-  border-radius: 5px;
-  width: 220px;
-  height: 40px;
+  
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding: 30px 15px;
   min-width: 250px;
   max-width: 400px;
   background-color: #091928;
   color: #ffff;
 }
 
-.sidebar svg {
+.sidebarTitle {
+  padding-left: 10px;
+}
+
+.sidebarTitle svg {
   margin-right: 10px;
 }
 
@@ -146,6 +150,7 @@
 
 .listItemContainer {
   flex-direction: column;
+  gap: 6px;
 }
 
 .filter {

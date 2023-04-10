@@ -47,9 +47,7 @@ function Sidebar() {
         </svg>
         Clerkie Challenge
       </div>
-      <div>
         <ListItem />
-      </div>
     </div>
   );
 }
