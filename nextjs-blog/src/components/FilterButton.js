@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from "@/styles/Home.module.css";
 
-function FilterButton() {
+function FilterButton({onClick}) {
+
   return (
-    <div className={styles.filter}>
+    <div className={styles.filter} onClick={onClick}>
       <svg
         width="19"
         height="21"
@@ -16,7 +17,7 @@ function FilterButton() {
           stroke="#424242"
           strokeWidth="2"
           strokeLinecap="round"
-          stroke-linejoin="round"
+          strokeLinejoin="round"
         />
         <circle
           cx="3"
@@ -31,7 +32,7 @@ function FilterButton() {
           stroke="#424242"
           strokeWidth="2"
           strokeLinecap="round"
-          stroke-linejoin="round"
+          strokeLinejoin="round"
         />
         <circle
           cx="3"
@@ -47,7 +48,7 @@ function FilterButton() {
           stroke="#424242"
           strokeWidth="2"
           strokeLinecap="round"
-          stroke-linejoin="round"
+          strokeLinejoin="round"
         />
         <circle
           cx="3"
