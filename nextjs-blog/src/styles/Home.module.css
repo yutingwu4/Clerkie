@@ -25,7 +25,7 @@
   min-height: 0;
   flex-basis: 0;
   flex-grow: 1;
-  /* gap: 25px; */
+  gap: 25px;
   /* margin-bottom: 25px; */
 }
 
@@ -162,7 +162,7 @@
   display: flex;
   align-items: center;
   padding-left: 200px;
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; */
 }
 
 .filterContainer a {
@@ -232,6 +232,7 @@
   padding: 1px;
   position: absolute;
   background-color: #fff;
+  margin-top: 10px;
 }
 
 .filterControl hr {
@@ -248,7 +249,7 @@
 
 .filterModal {
   padding-left: 200px;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .clearButton {
@@ -292,7 +293,7 @@
   content: none;
   width: 19px;
   height: 19px;
-  border: 1.5px solid #ababab;
+  border: 1.5px solid pink;
   cursor: pointer;
 }
 
@@ -301,10 +302,6 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 25px;
-}
-
-.filterDetails > div {
-  /* margin-bottom: 26px; */
 }
 
 .applyButton {

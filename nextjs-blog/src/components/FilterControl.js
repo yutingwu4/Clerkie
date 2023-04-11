@@ -1,12 +1,30 @@
-import React, {useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "@/styles/Home.module.css";
 
-function FilterControl({ setFiltermodalOpen }) {
-  const [checked, setChecked] = useState(false);
+function FilterControl({
+  onClose,
+  selectedStatuses: extSelectedStatuses,
+  onApply,
+}) {
+  const [selectedStatuses, setSelectedStatuses] = useState(extSelectedStatuses);
+  const switchSelectedStatus = (status, enabled) => {
+    setSelectedStatuses((prev) => {
+      return {
+        ...prev,
+        [status]: enabled,
+      };
+    });
+  };
 
-  const handleChange = () => {
-    setChecked(!checked);
-  }
+  useEffect(() => {
+    setSelectedStatuses(extSelectedStatuses);
+  }, [extSelectedStatuses]);
+
+  const handleChange = (e) => {
+    let name = e.target.name;
+    let enabled = e.target.checked;
+    switchSelectedStatus(name, enabled);
+  };
 
   return (
     <div className={styles.filterControl}>
@@ -14,10 +32,7 @@ function FilterControl({ setFiltermodalOpen }) {
         <button className={styles.clearButton}>Clear all</button>
         <div>Filter</div>
 
-        <button
-          className={styles.closeButton}
-          onClick={() => setFiltermodalOpen(false)}
-        >
+        <button className={styles.closeButton} onClick={onClose}>
           <svg
             width="17"
             height="17"
@@ -45,15 +60,33 @@ function FilterControl({ setFiltermodalOpen }) {
         <div className={styles.friendStatus}>Friend Status</div>
         <label>
           Close Friends
-          <input type="checkbox" checked={checked} onChange={handleChange} />
+          <input
+            type="checkbox"
+            checked={selectedStatuses["Close Friends"]}
+            onChange={handleChange}
+            name="Close Friends"
+          />
         </label>
         <label>
           Super Close Friends
-          <input type="checkbox"  />
+          <input
+            type="checkbox"
+            checked={selectedStatuses["Super Close Friends"]}
+            onChange={handleChange}
+            name="Super Close Friends"
+          />
         </label>
       </div>
       <div className={styles.applyContainer}>
-        <button className={styles.applyButton}>Apply</button>
+        <button
+          onClick={() => {
+            onApply(selectedStatuses);
+            onClose();
+          }}
+          className={styles.applyButton}
+        >
+          Apply
+        </button>
       </div>
     </div>
   );

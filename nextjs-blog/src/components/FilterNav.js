@@ -3,11 +3,11 @@ import FilterButton from "@/components/FilterButton";
 import styles from "@/styles/Home.module.css";
 import FilterControl from "./FilterControl";
 
-export default function FilterNav() {
+export default function FilterNav({ onApply, selectedStatuses }) {
   const [filtermodalOpen, setFiltermodalOpen] = useState(false);
 
   return (
-    <>
+    <div>
       <div className={styles.filterContainer}>
         <FilterButton
           filtermodalOpen={filtermodalOpen}
@@ -19,9 +19,13 @@ export default function FilterNav() {
 
       {filtermodalOpen && (
         <div className={styles.filterModal}>
-          <FilterControl setFiltermodalOpen={setFiltermodalOpen} />
+          <FilterControl
+            onApply={onApply}
+            onClose={() => setFiltermodalOpen(false)}
+            selectedStatuses={selectedStatuses}
+          />
         </div>
       )}
-    </>
+    </div>
   );
 }

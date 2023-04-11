@@ -1,4 +1,4 @@
-// import HomePage from "@/components/HomePage";
+import { useState, useMemo } from 'react';
 import Page from "@/components/Page";
 import Card from "@/components/Card";
 import styles from "@/styles/Home.module.css";
@@ -50,19 +50,32 @@ const data = [
 ];
 
 export default function Home() {
+  const [selectedStatuses, setSelectedStatuses] = useState({});
+
+  const filtersEnabled = useMemo(() => {
+    return Object.values(selectedStatuses).some(el => el);
+  }, [selectedStatuses]);
+
   return (
-    <Page title='Friends'>
-      <FilterNav />
+    <Page title="Friends">
+      <FilterNav
+        onApply={setSelectedStatuses}
+        selectedStatuses={selectedStatuses}
+      />
       <div className={styles.cardContainer}>
-        {data.map((person, i) => (
-          <Card
-            key={i}
-            name={person.name}
-            email={person.email}
-            phone={person.phone}
-            status={person.status}
-          />
-        ))}
+        {data
+          .filter(
+            (person) => !filtersEnabled || selectedStatuses[person.status]
+          )
+          .map((person, i) => (
+            <Card
+              key={i}
+              name={person.name}
+              email={person.email}
+              phone={person.phone}
+              status={person.status}
+            />
+          ))}
       </div>
     </Page>
   );
