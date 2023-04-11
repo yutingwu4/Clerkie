@@ -2,6 +2,7 @@
 import Page from "@/components/Page";
 import Card from "@/components/Card";
 import styles from "@/styles/Home.module.css";
+import FilterNav from "@/components/FilterNav";
 
 const data = [
   {
@@ -50,7 +51,8 @@ const data = [
 
 export default function Home() {
   return (
-    <Page>
+    <Page title='Friends'>
+      <FilterNav />
       <div className={styles.cardContainer}>
         {data.map((person, i) => (
           <Card
