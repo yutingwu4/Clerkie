@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import styles from "@/styles/Home.module.css";
 
 function FilterControl({
@@ -16,6 +16,10 @@ function FilterControl({
     });
   };
 
+  const filtersEnabledInt = useMemo(() => {
+    return Object.values(selectedStatuses).filter(el => el).length;
+  }, [selectedStatuses]);
+
   useEffect(() => {
     setSelectedStatuses(extSelectedStatuses);
   }, [extSelectedStatuses]);
@@ -26,10 +30,21 @@ function FilterControl({
     switchSelectedStatus(name, enabled);
   };
 
+  const handleClearFilter = () => {
+    setSelectedStatuses({});
+  };
+
   return (
     <div className={styles.filterControl}>
       <div className={styles.filterControlHeader}>
-        <button className={styles.clearButton}>Clear all</button>
+        <button
+          className={
+            filtersEnabledInt ? styles.clearButtonOn : styles.clearButton
+          }
+          onClick={handleClearFilter}
+        >
+          Clear all
+        </button>
         <div>Filter</div>
 
         <button className={styles.closeButton} onClick={onClose}>
@@ -62,7 +77,7 @@ function FilterControl({
           Close Friends
           <input
             type="checkbox"
-            checked={selectedStatuses["Close Friends"]}
+            checked={selectedStatuses["Close Friends"] || false}
             onChange={handleChange}
             name="Close Friends"
           />
@@ -71,7 +86,7 @@ function FilterControl({
           Super Close Friends
           <input
             type="checkbox"
-            checked={selectedStatuses["Super Close Friends"]}
+            checked={selectedStatuses["Super Close Friends"] || false}
             onChange={handleChange}
             name="Super Close Friends"
           />

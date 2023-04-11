@@ -53,13 +53,16 @@ export default function Home() {
   const [selectedStatuses, setSelectedStatuses] = useState({});
 
   const filtersEnabled = useMemo(() => {
-    return Object.values(selectedStatuses).some(el => el);
+    console.log('filtersEnabled', Object.values(selectedStatuses).filter(el => el).length)
+    return Object.values(selectedStatuses).filter(el => el).length;
   }, [selectedStatuses]);
 
   return (
     <Page title="Friends">
       <FilterNav
+        filtersEnabled={filtersEnabled}
         onApply={setSelectedStatuses}
+        onClear={() => setSelectedStatuses({})}
         selectedStatuses={selectedStatuses}
       />
       <div className={styles.cardContainer}>

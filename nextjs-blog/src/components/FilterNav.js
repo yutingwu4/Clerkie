@@ -3,18 +3,24 @@ import FilterButton from "@/components/FilterButton";
 import styles from "@/styles/Home.module.css";
 import FilterControl from "./FilterControl";
 
-export default function FilterNav({ onApply, selectedStatuses }) {
+export default function FilterNav({ onApply, selectedStatuses, filtersEnabled, onClear }) {
   const [filtermodalOpen, setFiltermodalOpen] = useState(false);
 
   return (
     <div>
       <div className={styles.filterContainer}>
         <FilterButton
+          filtersEnabled={filtersEnabled}
           filtermodalOpen={filtermodalOpen}
           onClick={() => setFiltermodalOpen(true)}
         />
         <div className={styles.vl}></div>
-        <a>Clear all</a>
+        <button
+          onClick={onClear}
+          className={filtersEnabled ? styles.clearButtonOn : styles.clearButton}
+        >
+          Clear all
+        </button>
       </div>
 
       {filtermodalOpen && (
