@@ -1,14 +1,23 @@
-import React from "react";
+import React, {useState } from "react";
 import styles from "@/styles/Home.module.css";
 
-function FilterControl() {
+function FilterControl({ setFiltermodalOpen }) {
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = () => {
+    setChecked(!checked);
+  }
+
   return (
     <div className={styles.filterControl}>
       <div className={styles.filterControlHeader}>
         <button className={styles.clearButton}>Clear all</button>
         <div>Filter</div>
 
-        <button className={styles.closeButton}>
+        <button
+          className={styles.closeButton}
+          onClick={() => setFiltermodalOpen(false)}
+        >
           <svg
             width="17"
             height="17"
@@ -34,14 +43,20 @@ function FilterControl() {
       <hr></hr>
       <div className={styles.filterDetails}>
         <div className={styles.friendStatus}>Friend Status</div>
-        <div>Close Friends</div>
-        <div>Super Close Friends</div>
-        {/* <label>
-          Test
-          <input type="checkbox" />
-        </label> */}
+        {/* <div>Close Friends</div>
+        <div>Super Close Friends</div> */}
+        <label>
+          Close Friends
+          <input type="checkbox" checked={checked} onChange={handleChange} />
+        </label>
+        <label>
+          Super Close Friends
+          <input type="checkbox" checked={checked} onChange={handleChange} />
+        </label>
       </div>
+      <div className={styles.applyContainer}>
         <button className={styles.applyButton}>Apply</button>
+      </div>
     </div>
   );
 }

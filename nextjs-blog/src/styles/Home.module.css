@@ -144,6 +144,19 @@
   cursor: pointer;
 }
 
+.filterOpen {
+  background-color: #424242;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 37px;
+  width: 59px;
+  border-radius: 30px;
+  padding: 10px 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
 .filterContainer {
   display: flex;
   align-items: center;
@@ -165,8 +178,6 @@
   flex-direction: column;
   color: #000000;
   padding: 25px;
-  /* max-width: calc(100% - 250px); */
-  /* max-width: 250px; */
   flex-grow: 1;
   border: 1px solid #d7d7d7;
   border-radius: 5px;
@@ -222,7 +233,7 @@
 }
 
 .filterControl hr {
-  border-top: 1px solid #eaeaea;
+  border-top: 0.5px solid #eaeaea;
 }
 
 .filterControlHeader {
@@ -267,14 +278,32 @@
 }
 
 .friendStatus {
-  margin: 26px 0 26px 0;
+  margin: 25px 0;
   font-size: 14px;
   color: #686868;
   font-weight: 500;
 }
 
+.filterDetails input[type="checkbox"] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+  outline: none;
+  content: none;
+  width: 19px;
+  height: 19px;
+  border: 1.5px solid #ababab;
+}
+
+.filterDetails label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
 .filterDetails > div {
-  margin-bottom: 26px;
+  /* margin-bottom: 26px; */
 }
 
 .applyButton {
@@ -290,6 +319,12 @@
   height: 45px;
   margin-left: 9px;
   cursor: pointer;
+}
+
+.applyContainer {
+  padding-bottom: 16px;
+   position:absolute;
+   bottom:0;
 }
 
 .loading {

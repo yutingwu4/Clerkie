@@ -9,16 +9,19 @@ export default function FilterNav() {
   return (
     <>
       <div className={styles.filterContainer}>
-        <FilterButton onClick={() => setFiltermodalOpen(true)} />
+        <FilterButton
+          filtermodalOpen={filtermodalOpen}
+          onClick={() => setFiltermodalOpen(true)}
+        />
         <div className={styles.vl}></div>
         <a>Clear all</a>
-        </div>
+      </div>
 
-        {filtermodalOpen && (
-          <div className={styles.filterModal}>
-            <FilterControl />
-          </div>
-        )}
+      {filtermodalOpen && (
+        <div className={styles.filterModal}>
+          <FilterControl setFiltermodalOpen={setFiltermodalOpen} />
+        </div>
+      )}
     </>
   );
 }
