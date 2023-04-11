@@ -4,7 +4,7 @@ import Head from "next/head";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 
-function Page({ children }) {
+function Page({ children, title }) {
   return (
     <div className="main">
       <Head>
@@ -16,9 +16,9 @@ function Page({ children }) {
       <main className={styles.main}>
         <Sidebar />
 
-        <div className={styles.grid}>
-          <Header />
-          {children}
+        <div className={styles.contentContainer}>
+          <Header title={title} />
+          <div className={styles.content}>{children}</div>
         </div>
       </main>
     </div>
