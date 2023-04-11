@@ -344,12 +344,12 @@
 
 .loading {
   display: flex;
-  width: 1050px;
   height: 114px;
   border: 1px solid #d7d7d7;
   border-radius: 6px;
   padding: 36px 30px;
   flex-grow: 1;
+  align-items: flex-end;
 }
 
 .loadingRight {

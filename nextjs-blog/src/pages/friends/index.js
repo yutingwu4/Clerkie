@@ -4,6 +4,7 @@ import Card from "@/components/Card";
 import styles from "@/styles/Home.module.css";
 import FilterNav from "@/components/FilterNav";
 import { getAllPeople } from '@/api/people';
+import LoadingCard from "@/components/LoadingCard";
 
 export default function Home() {
   const [selectedStatuses, setSelectedStatuses] = useState({});
@@ -44,6 +45,7 @@ export default function Home() {
               status={person.status}
             />
           ))}
+          <LoadingCard />
       </div>
     </Page>
   );
