@@ -25,7 +25,8 @@
   min-height: 0;
   flex-basis: 0;
   flex-grow: 1;
-  gap: 25px;
+  /* gap: 25px; */
+  /* margin-bottom: 25px; */
 }
 
 .card {
@@ -161,6 +162,7 @@
   display: flex;
   align-items: center;
   padding-left: 200px;
+  margin-bottom: 25px;
 }
 
 .filterContainer a {
@@ -246,6 +248,7 @@
 
 .filterModal {
   padding-left: 200px;
+  margin-bottom: 10px;
 }
 
 .clearButton {
@@ -285,14 +288,12 @@
 }
 
 .filterDetails input[type="checkbox"] {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  -o-appearance: none;
   outline: none;
   content: none;
   width: 19px;
   height: 19px;
   border: 1.5px solid #ababab;
+  cursor: pointer;
 }
 
 .filterDetails label {

@@ -43,15 +43,13 @@ function FilterControl({ setFiltermodalOpen }) {
       <hr></hr>
       <div className={styles.filterDetails}>
         <div className={styles.friendStatus}>Friend Status</div>
-        {/* <div>Close Friends</div>
-        <div>Super Close Friends</div> */}
         <label>
           Close Friends
           <input type="checkbox" checked={checked} onChange={handleChange} />
         </label>
         <label>
           Super Close Friends
-          <input type="checkbox" checked={checked} onChange={handleChange} />
+          <input type="checkbox"  />
         </label>
       </div>
       <div className={styles.applyContainer}>
