@@ -22,7 +22,7 @@ export default function Home() {
     const fetchAllPeople = async () => {
       const fetchedData = await getAllPeople(page);
       setData((prev) => [...prev, ...fetchedData.results]);
-    //   setData((prev) => [...prev, ...fetchedData]); // infinite scrolling, async response 
+      //   setData((prev) => [...prev, ...fetchedData]); // infinite scrolling, async response
       setTotalDocs(fetchedData.size);
       setLoading(false);
     };
@@ -35,7 +35,7 @@ export default function Home() {
       scrollRef.current.clientHeight + scrollRef.current.scrollTop + 1 >=
       scrollRef.current.scrollHeight
     )
-    setLoading(true);
+      setLoading(true);
     setPage((prev) => prev + 1);
   }, [loading, scrollRef.current]);
 
@@ -66,7 +66,7 @@ export default function Home() {
               status={person.status}
             />
           ))}
-        {loading && <LoadingCard />}
+        {loading && (Array(5).fill(<LoadingCard />))}
       </div>
     </Page>
   );
