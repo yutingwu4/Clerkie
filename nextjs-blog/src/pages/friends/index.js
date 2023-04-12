@@ -3,44 +3,40 @@ import Page from "@/components/Page";
 import Card from "@/components/Card";
 import styles from "@/styles/Home.module.css";
 import FilterNav from "@/components/FilterNav";
-import { getAllPeople } from '@/api/people';
-import LoadingCard from '@/components/LoadingCard';
+import { getAllPeople } from "@/api/people";
+import LoadingCard from "@/components/LoadingCard";
 
 export default function Home() {
   const [selectedStatuses, setSelectedStatuses] = useState({});
   const [data, setData] = useState([]);
   const [page, setPage] = useState(0);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [totalDocs, setTotalDocs] = useState(null);
   const scrollRef = useRef();
 
   const filtersEnabled = useMemo(() => {
-    return Object.values(selectedStatuses).filter(el => el).length;
+    return Object.values(selectedStatuses).filter((el) => el).length;
   }, [selectedStatuses]);
 
   useEffect(() => {
-    console.log('page', page)
     const fetchAllPeople = async () => {
-        setLoading(true);
-        const fetchedData = await getAllPeople(page);
-        setData(prev => [...prev, ...fetchedData.results]);
-        setTotalDocs(fetchedData.size);
-        setLoading(false);
-    }
+      const fetchedData = await getAllPeople(page);
+      setData((prev) => [...prev, ...fetchedData.results]);
+    //   setData((prev) => [...prev, ...fetchedData]); // infinite scrolling, async response 
+      setTotalDocs(fetchedData.size);
+      setLoading(false);
+    };
     fetchAllPeople();
-  }, [page])
+  }, [page]);
 
   const handleScroll = useCallback(() => {
-    // console.log("height", scrollRef.current.scrollHeight);
-    // console.log("top", scrollRef.current.scrollTop);
-    // console.log(scrollRef.current.clientHeight);
-
-    if (loading || totalDocs === data.length) return;
+    if (loading || totalDocs === data.length) return; // if we want infinite scrolling to stop once we reach the end of dataset
     if (
       scrollRef.current.clientHeight + scrollRef.current.scrollTop + 1 >=
       scrollRef.current.scrollHeight
     )
-      setPage((prev) => prev + 1);
+    setLoading(true);
+    setPage((prev) => prev + 1);
   }, [loading, scrollRef.current]);
 
   useEffect(() => {

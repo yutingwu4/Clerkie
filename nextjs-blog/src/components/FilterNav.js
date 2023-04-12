@@ -22,7 +22,6 @@ export default function FilterNav({ onApply, selectedStatuses, filtersEnabled, o
           Clear all
         </button>
       </div>
-
       {filtermodalOpen && (
         <div className={styles.filterModal}>
           <FilterControl

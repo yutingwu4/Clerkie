@@ -1,12 +1,10 @@
 import React from 'react'
-// import Logo from '@/assets/logo.svg'
 import styles from "@/styles/Home.module.css";
 import ListItem from './ListItem';
 
 function Sidebar() {
   return (
     <div className={styles.sidebar}>
-      {/* <img src={Logo} alt='logo' /> */}
       <div className={styles.sidebarTitle}>
         <svg
           width="20"
