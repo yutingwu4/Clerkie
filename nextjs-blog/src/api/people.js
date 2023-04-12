@@ -44,5 +44,14 @@ const data = [
 ];
 
 export const getAllPeople = async (page) => {
-    return data;
-}
+  return new Promise((resolve, reject) => {
+    setTimeout(
+      () =>
+        resolve({
+          size: data.length,
+          results: data.slice(page * 3, (page + 1) * 3),
+        }),
+      3000
+    );
+  });
+};
