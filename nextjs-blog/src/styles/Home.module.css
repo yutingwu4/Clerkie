@@ -369,7 +369,7 @@
   );
   border-radius: 27px;
   margin-bottom: 10px;
-   animation: animate 3s infinite;
+  animation: animate 3s infinite;
 }
 
 .loadingLB {
@@ -381,7 +381,7 @@
     rgba(234, 234, 234, 0.25) 100%
   );
   border-radius: 27px;
-    animation: animate 3s infinite;
+  animation: animate 3s infinite;
 }
 
 .loadingRT {
@@ -394,6 +394,7 @@
   );
   border-radius: 27px;
   margin-bottom: 10px;
+  animation: animate 3s infinite;
 }
 
 .loadingRB {
@@ -405,6 +406,7 @@
     rgba(234, 234, 234, 0.25) 100%
   );
   border-radius: 27px;
+  animation: animate 3s infinite;
 }
 
 @keyframes animate {
@@ -420,7 +422,6 @@
     opacity: 0;
   }
 }
-
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
