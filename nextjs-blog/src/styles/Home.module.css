@@ -349,15 +349,14 @@
   border-radius: 6px;
   padding: 36px 30px;
   flex-grow: 1;
-  align-items: flex-end;
 }
 
 .loadingRight {
   display: flex;
-  justify-content: flex-end;
   flex-direction: column;
   margin-left: auto;
   margin-right: 0;
+  align-items: flex-end;
 }
 
 .loadingLT {
@@ -370,6 +369,7 @@
   );
   border-radius: 27px;
   margin-bottom: 10px;
+   animation: animate 3s infinite;
 }
 
 .loadingLB {
@@ -381,6 +381,7 @@
     rgba(234, 234, 234, 0.25) 100%
   );
   border-radius: 27px;
+    animation: animate 3s infinite;
 }
 
 .loadingRT {
@@ -405,6 +406,21 @@
   );
   border-radius: 27px;
 }
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
