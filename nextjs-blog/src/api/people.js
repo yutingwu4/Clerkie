@@ -49,7 +49,7 @@ export const getAllPeople = async (page) => {
       () =>
         resolve({
           size: data.length,
-          results: data.slice(page * 3, (page + 1) * 3),
+          results: data.slice(page * 5, (page + 1) * 5),
         }),
       3000
     );

@@ -70,7 +70,8 @@ export default function Home() {
               status={person.status}
             />
           ))}
-        {loading && <LoadingCard />}
+        {/* {loading && <LoadingCard />} */}
+        <LoadingCard />
       </div>
     </Page>
   );
