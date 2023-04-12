@@ -66,7 +66,7 @@ export default function Home() {
               status={person.status}
             />
           ))}
-        {loading && (Array(5).fill(<LoadingCard />))}
+        {loading && (Array(6).fill(<LoadingCard />))}
       </div>
     </Page>
   );
