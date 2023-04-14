@@ -47,6 +47,6 @@ Loading
 
 
 - [x] Build app with the Next.js starter project, which includes the React framework.  Exclude other use of external component or helper libraries.
-- [x] Creat mock data to simulate loading, handle pagination, and filtering.
+- [x] Create mock data to simulate loading, handle pagination, and filtering.
 - [x] Add fade animations to the loader component.
 - [x] Deploy app with cloud server platform, Vercel.
