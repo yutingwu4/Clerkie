@@ -68,7 +68,7 @@ const data = [
   {
     name: "Chelsea Handler",
     phone: "(412) 235-5321",
-    email: "chuck@gmail.com",
+    email: "chunk@gmail.com",
     status: "Super Close Friends",
   },
   {
