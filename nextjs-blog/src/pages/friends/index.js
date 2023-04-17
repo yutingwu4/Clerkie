@@ -46,19 +46,16 @@ export default function Home() {
     return () => scrollRef.current?.removeEventListener("scroll", handleScroll);
   }, [handleScroll, scrollRef.current]);
 
-  // function for searching matching strings, name
-  useEffect(() => {
-    const searchData = () => {
-      // bring search to lowercase, compare to string from data.name in lowercase
-        // if match, update data to search results
-      const result = data.filter((person) =>
-        person.name.toLowerCase().includes(search.toLowerCase())
-      );
-      console.log('result', result)
-      setData(result);
-    };
-    searchData(search, data);
-  }, [search])
+  // useEffect(() => {
+  //   const searchData = () => {
+  //     const result = data.filter((person) =>
+  //       person.name.toLowerCase().includes(search.toLowerCase())
+  //     );
+  //     console.log('result', result)
+  //     setData(result);
+  //   };
+  //   searchData(search, data);
+  // }, [search])
 
   return (
     <Page title="Friends">
