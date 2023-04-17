@@ -5,6 +5,7 @@ import styles from "@/styles/Home.module.css";
 import FilterNav from "@/components/FilterNav";
 import { getAllPeople } from "@/api/people";
 import LoadingCard from "@/components/LoadingCard";
+import Search from "@/components/Search";
 
 export default function Home() {
   const [selectedStatuses, setSelectedStatuses] = useState({});
@@ -12,6 +13,7 @@ export default function Home() {
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(true);
   const [totalDocs, setTotalDocs] = useState(null);
+  const [search, setSearch] = useState("");
   const scrollRef = useRef();
 
   const filtersEnabled = useMemo(() => {
@@ -44,14 +46,32 @@ export default function Home() {
     return () => scrollRef.current?.removeEventListener("scroll", handleScroll);
   }, [handleScroll, scrollRef.current]);
 
+  // function for searching matching strings, name
+  useEffect(() => {
+    const searchData = () => {
+      // bring search to lowercase, compare to string from data.name in lowercase
+        // if match, update data to search results
+      const result = data.filter((person) =>
+        person.name.toLowerCase().includes(search.toLowerCase())
+      );
+      console.log('result', result)
+      setData(result);
+    };
+    searchData(search, data);
+  }, [search])
+
   return (
     <Page title="Friends">
-      <FilterNav
-        filtersEnabled={filtersEnabled}
-        onApply={setSelectedStatuses}
-        onClear={() => setSelectedStatuses({})}
-        selectedStatuses={selectedStatuses}
-      />
+      <div className={styles.friends}>
+        <FilterNav
+          filtersEnabled={filtersEnabled}
+          onApply={setSelectedStatuses}
+          onClear={() => setSelectedStatuses({})}
+          selectedStatuses={selectedStatuses}
+        />
+        <Search search={search} setSearch={setSearch} />
+      </div>
+
       <div className={styles.cardContainer} ref={scrollRef}>
         {data
           .filter(
@@ -66,7 +86,7 @@ export default function Home() {
               status={person.status}
             />
           ))}
-        {loading && (Array(6).fill(<LoadingCard />))}
+        {loading && Array(6).fill(<LoadingCard />)}
       </div>
     </Page>
   );
